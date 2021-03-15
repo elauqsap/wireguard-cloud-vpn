@@ -2,9 +2,13 @@
 ansible/**/*.retry
 
 # Terraform
+terraform/**/.terraform
+terraform/**/*.tfvars
 terraform/**/*.tfstate
 terraform/**/*.tfstate.backup
 terraform/**/*.tfstate.lock.info
+terraform/**/.terraform.lock.hcl
+terraform/**/providers.tf
 
 # General
 .DS_Store
