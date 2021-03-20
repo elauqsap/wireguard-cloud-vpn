@@ -4,6 +4,10 @@ resource "google_storage_bucket" "gitops" {
   location      = var.bucket_location
   storage_class = var.bucket_storage_class
 
+  versioning {
+    enabled = true
+  }
+
   # WARNING: setting to true will cause TF to fail
   # when attempting to delete the bucket
   force_destroy = true

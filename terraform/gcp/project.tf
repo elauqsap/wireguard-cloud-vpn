@@ -16,6 +16,8 @@ module "wireguard" {
 
   activate_apis = [
     "cloudbilling.googleapis.com",
+    "compute.googleapis.com",
+    "iam.googleapis.com"
   ]
 
   # budget_alert_spent_percents = [0.7, 0.8, 0.9, 1.0]

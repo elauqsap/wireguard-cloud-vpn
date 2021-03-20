@@ -70,3 +70,82 @@ variable "subnet_flow_logs" {
     metadata = "INCLUDE_ALL_METADATA"
   }
 }
+
+# --------------------------------------------------
+# Instance Template: Optional Parameters
+# --------------------------------------------------
+variable "machine_type" {
+  description = "Machine type for compute instance"
+  type        = string
+  default     = "n1-standard-1"
+}
+
+variable "boot_disk_image_family" {
+  description = "Image family to use with boot disk"
+  type        = string
+  default     = "debian-10"
+}
+
+variable "boot_disk_image_project" {
+  description = "Project hosting the images"
+  type        = string
+  default     = "debian-cloud"
+}
+
+variable "boot_disk_size_gb" {
+  description = "Size (in GB) for the boot disk"
+  type        = number
+  default     = 20
+}
+
+variable "boot_disk_type" {
+  description = "Type of disk to use for boot"
+  type        = string
+  default     = "pd-ssd"
+}
+
+variable "boot_disk_auto_delete" {
+  description = "Auto-delete boot disk on destruction"
+  type        = bool
+  default     = true
+}
+
+variable "can_ip_forward" {
+  description = "Enable IP forwarding, i.e. NAT instances"
+  type        = bool
+  default     = true
+}
+
+variable "instance_labels" {
+  description = "Common labels to apply to instances"
+  type        = map(any)
+  default = {
+    env       = "production"
+    vpn       = true
+    exit_node = true
+  }
+}
+
+variable "instance_tags" {
+  description = "Network tags, provided as a list"
+  type        = list(string)
+  default = [
+    "iap-ssh"
+  ]
+}
+
+variable "service_account_scopes" {
+  description = "A list of service scopes for a service account"
+  type        = list(any)
+  default = [
+    "cloud-platform"
+  ]
+}
+
+variable "metadata" {
+  description = "Metadata configuration for instances"
+  type        = map(string)
+  default = {
+    enable-oslogin = "TRUE"
+  }
+}
