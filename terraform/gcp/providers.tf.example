@@ -1,0 +1,22 @@
+terraform {
+  required_version = ">= 0.14"
+  required_providers {
+    google = {
+      source = "hashicorp/google"
+    }
+    google-beta = {
+      source = "hashicorp/google-beta"
+    }
+    null = {
+      source = "hashicorp/null"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+
+  backend "gcs" {
+    bucket = "YOUR_BUCKET_NAME"
+    prefix = "terraform/wireguard-cloud-vpn"
+  }
+}
