@@ -77,7 +77,7 @@ variable "subnet_flow_logs" {
 variable "machine_type" {
   description = "Machine type for compute instance"
   type        = string
-  default     = "n1-standard-1"
+  default     = "g1-small"
 }
 
 variable "boot_disk_image_family" {
