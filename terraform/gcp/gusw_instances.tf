@@ -2,7 +2,7 @@ locals {
   gusw_distribution = {
     "us-west1" = [
       {
-        zone       = "us-west1-a"
+        zone       = "us-west1-a" # The Dalles, Oregon, North America
         network_ip = "10.0.0.2"
       }
     ]
